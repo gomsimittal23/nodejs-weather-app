@@ -12,7 +12,7 @@ const forecast = (latitude, longitude, callback) => {
         }
         else{
             const data = response.body.current;
-            callback(undefined, `${data.weather_descriptions[0]}. It is currently ${data.temperature} degrees out but it feels like ${data.feelslike} degrees.`);
+            callback(undefined, `${data.weather_descriptions[0]}. It is currently ${data.temperature} degrees out but it feels like ${data.feelslike} degrees. The current time is ${response.body.location.localtime.substring(11)}`);
         }
     });
 }
